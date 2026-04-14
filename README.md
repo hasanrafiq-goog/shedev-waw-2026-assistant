@@ -34,8 +34,8 @@ A Google ADK-based AI personal assistant that helps you search for places and ma
 In Cloud Shell (or your terminal), clone this repository:
 
 ```bash
-git clone https://github.com/rafiqhasan/shedev-personal-assistant.git
-cd shedev-personal-assistant
+git clone https://github.com/hasanrafiq-goog/shedev-waw-2026-assistant.git
+cd shedev-waw-2026-assistant
 ```
 
 ### 4. Create Virtual Environment
