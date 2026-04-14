@@ -1,0 +1,19 @@
+# Google ADK
+google-adk==1.27.5
+
+# Google Calendar API
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
+
+# Environment variables
+python-dotenv
+
+# HTTP requests for Places API
+requests
+
+# Timezone support
+pytz
+
+# YAML for config (if needed)
+pyyaml
