@@ -65,18 +65,25 @@ gcloud auth application-default login
 
 ### 4. Configure OAuth Consent Screen
 
-1. Go to [APIs & Services > OAuth consent screen](https://console.cloud.google.com/apis/credentials/consent)
-2. Choose **User Type: External** and click **Create**.
-3. App Name: `Personal Assistant` | Support Email: (Your Email) | Developer Email: (Your Email).
-4. Click **Save and Continue** through the Scopes and Test Users pages.
-5. **CRITICAL:** On the "Test users" page, click **Add Users** and add your own email address.
+1. Go to [APIs & Services > OAuth consent screen](https://console.cloud.google.com/apis/credentials/consent).
+2. You will be guided through the **Google Auth Platform** setup:
+   - **1. App Information:** Enter the App name (e.g., `Personal Assistant`) and select your User support email. Click Next.
+   - **2. Audience:** Choose **External**. Click Next.
+   - **3. Contact Information:** Enter your email address as the Developer contact. Click Next.
+   - **4. Finish:** Review and complete the setup.
+3. **CRITICAL:** After the initial setup, navigate to the **Audiences** (or **Test users**) section in the Auth Platform menu, click **Add Users**, and add your own email address. If you skip this, the login will fail!
 
 ### 5. Create Credentials
 
 #### A. Places API Key
 1. Go to [APIs & Services > Credentials](https://console.cloud.google.com/apis/credentials).
 2. Click **Create Credentials > API Key**.
-3. Copy the key and save it for the next step.
+3. **Restricting the Key (Mandatory):**
+   - After the key is created, click **Edit API Key** (or click on the key name).
+   - Under **API restrictions**, select **Restrict key**.
+   - In the dropdown, search for and select **Places API (New)**.
+   - Click **Save**.
+4. Copy the restricted key and save it for the next step.
 
 #### B. Calendar OAuth 2.0 Client
 1. Click **Create Credentials > OAuth client ID**.
@@ -113,13 +120,16 @@ GOOGLE_PLACES_API_KEY="your-api-key"
    - Click the **Web Preview** button (top-right of Cloud Shell terminal).
    - Select **Preview on port 8000**.
 
-3. **Finalize OAuth (Cloud Shell Specific):**
-   - In the new tab, try to ask: "What is on my calendar?"
-   - You will see an OAuth error. **Copy the `redirect_uri`** from that error page.
+3. **Select the Agent:**
+   - In the ADK UI, **select `personal_assistant` from the dropdown menu on the left sidebar** before sending your first message.
+
+4. Finalize OAuth (Cloud Shell Specific):
+   - In the chat, try to ask: "What is on my calendar?"
+   - You will see an OAuth error page. Click on **"Error details"** to reveal the technical details of the failure.
+   - Find the `redirect_uri` value in the error message. **Copy it**, but **only up to and including `/dev-ui/`** (e.g., `https://8000-xxxx.cloudshell.dev/dev-ui/`). Do not copy anything after /dev-ui/.
    - Go back to your **OAuth client ID** in the GCP Console.
    - Add that exact URI to the **Authorized redirect URIs** list.
-   - **Wait 1 minute**, refresh the agent page, and try again!
-
+   - **Wait 1 minute**, refresh the agent page, click on **"New session"** to start a fresh chat, and try again!
 ---
 
 ## 💡 Customization
