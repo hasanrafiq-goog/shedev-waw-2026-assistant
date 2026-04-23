@@ -54,7 +54,8 @@ gcloud config set project $PROJECT_ID
 ```bash
 gcloud services enable aiplatform.googleapis.com \
                        calendar-json.googleapis.com \
-                       places.googleapis.com
+                       places.googleapis.com \
+                       cloudresourcemanager.googleapis.com
 ```
 
 #### Authenticate
@@ -126,6 +127,7 @@ GOOGLE_PLACES_API_KEY="your-api-key"
 4. Finalize OAuth (Cloud Shell Specific):
    - In the chat, try to ask: "What is on my calendar?"
    - You will see an OAuth error page. Click on **"Error details"** to reveal the technical details of the failure.
+   - **Handle Pop-up Blockers:** If no window opens, check your browser's address bar for a Pop-up Blocked icon. Click it and select "Always allow pop-ups and redirects...".
    - Find the `redirect_uri` value in the error message. **Copy it**, but **only up to and including `/dev-ui/`** (e.g., `https://8000-xxxx.cloudshell.dev/dev-ui/`). Do not copy anything after /dev-ui/.
    - Go back to your **OAuth client ID** in the GCP Console.
    - Add that exact URI to the **Authorized redirect URIs** list.
