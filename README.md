@@ -2,6 +2,9 @@
 
 https://goo.gle/shedev-pl-waw-2026
 
+## 🤝 Authors
+- **Hasan Rafiq** - [LinkedIn](https://www.linkedin.com/in/hrfq/)
+
 A Google ADK-based AI personal assistant that helps you search for places and manage your Google Calendar.
 
 ## Features
