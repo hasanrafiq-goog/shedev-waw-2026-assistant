@@ -132,6 +132,10 @@ GOOGLE_PLACES_API_KEY="your-api-key"
    - **Wait 1 minute**, refresh the agent page, click on **"New session"** to start a fresh chat, and try again!
 ---
 
+## 🤝 Authors
+
+- **Hasan Rafiq** - [LinkedIn](https://www.linkedin.com/in/hrfq/)
+
 ## 💡 Customization
 
 Edit `config.py` to change:
